@@ -120,7 +120,7 @@ while True:
         print("Wrong guess!")
 
         if wrong_attempts == max_attempts:
-            print(stages[wrong_attempts])
+            print(Stages[wrong_attempts])
             print("💀 Game Over! The word was:", word)
             break
     else:
