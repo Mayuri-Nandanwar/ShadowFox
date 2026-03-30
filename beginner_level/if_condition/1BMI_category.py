@@ -3,19 +3,19 @@
 #If BMI is less than 18.5, print "Underweight"
 #Example: Enter height in meters: 1.75, Enter weight in kilograms: 70 Output: "Normal"
 
-#ask user for input
-height = float(input("Enter height in meters :"))
-weight = float(input("Enter weight in kilograms :"))
+# taking input from user
+h = float(input("Enter your height (in meters): "))
+w = float(input("Enter your weight (in kg): "))
 
-#Calculate BMI
-bmi = weight / (height ** 2)
+# calculating BMI
+bmi_value = w / (h ** 2)
 
-#determine bmi category
-if bmi >= 30:
+# checking BMI category
+if bmi_value >= 30:
     print("Obesity")
-elif bmi >= 25 and bmi < 30:
+elif bmi_value >= 25:
     print("Overweight")
-elif bmi >= 18.5 and bmi < 25:
+elif bmi_value >= 18.5:
     print("Normal")
 else:
     print("Underweight")

@@ -1,67 +1,67 @@
 #Create basic mobile phone functionalities in the classes like: make_call, recieve_call, take_a_picture, etc.
 
-# Base class
+# base class
 class MobilePhone:
-    def __init__(self, brand_name, screen_type, network_type, dual_sim, front_camera, rear_camera, RAM, storage):
-        self.brand_name = brand_name
-        self.screen_type = screen_type
-        self.network_type = network_type
-        self.dual_sim = dual_sim
-        self.front_camera = front_camera
-        self.rear_camera = rear_camera
-        self.RAM = RAM
+    def __init__(self, brand, screen, network, sim, front_cam, rear_cam, ram, storage):
+        self.brand = brand
+        self.screen = screen
+        self.network = network
+        self.sim = sim
+        self.front_cam = front_cam
+        self.rear_cam = rear_cam
+        self.ram = ram
         self.storage = storage
 
-    # Basic mobile functions
+    # basic functions
     def make_call(self, number):
-        print(self.brand_name, "is calling", number)
+        print(self.brand, "is calling", number)
 
     def receive_call(self):
-        print(self.brand_name, "is receiving a call")
+        print(self.brand, "is receiving a call")
 
     def take_picture(self):
-        print(self.brand_name, "is taking a picture using", self.rear_camera)
+        print(self.brand, "is taking a picture with", self.rear_cam)
 
-    def show_phone_details(self):
-        print("\nBrand:", self.brand_name)
-        print("Screen Type:", self.screen_type)
-        print("Network:", self.network_type)
-        print("Dual SIM:", self.dual_sim)
-        print("Front Camera:", self.front_camera)
-        print("Rear Camera:", self.rear_camera)
-        print("RAM:", self.RAM)
+    def show_details(self):
+        print("\nBrand:", self.brand)
+        print("Screen:", self.screen)
+        print("Network:", self.network)
+        print("Dual SIM:", self.sim)
+        print("Front Camera:", self.front_cam)
+        print("Rear Camera:", self.rear_cam)
+        print("RAM:", self.ram)
         print("Storage:", self.storage)
 
 
-# Apple class (child class)
+# Apple class
 class Apple(MobilePhone):
-    def __init__(self, screen_type, network_type, dual_sim, front_camera, rear_camera, ram, storage):
-        super().__init__("Apple", screen_type, network_type, dual_sim, front_camera, rear_camera, ram, storage)
+    def __init__(self, screen, network, sim, front_cam, rear_cam, ram, storage):
+        super().__init__("Apple", screen, network, sim, front_cam, rear_cam, ram, storage)
 
 
-# Samsung class (child class)
+# Samsung class
 class Samsung(MobilePhone):
-    def __init__(self, screen_type, network_type, dual_sim, front_camera, rear_camera, ram, storage):
-        super().__init__("Samsung", screen_type, network_type, dual_sim, front_camera, rear_camera, ram, storage)
+    def __init__(self, screen, network, sim, front_cam, rear_cam, ram, storage):
+        super().__init__("Samsung", screen, network, sim, front_cam, rear_cam, ram, storage)
 
 
-# Create Apple objects
-applephone1 = Apple("Touch Screen", "5G", False, "12MP", "48MP", "4GB", "64GB")
-applephone2 = Apple("Touch Screen", "5G", False, "16MP", "32MP", "4GB", "128GB")
+# creating Apple objects
+apple1 = Apple("Touch Screen", "5G", False, "12MP", "48MP", "4GB", "64GB")
+apple2 = Apple("Touch Screen", "5G", False, "16MP", "32MP", "4GB", "128GB")
 
-# Create Samsung objects
-samsungphone1 = Samsung("Touch Screen", "5G", True, "16MP", "48MP", "4GB", "64GB")
-samsungphone2 = Samsung("Touch Screen", "4G/5G", True, "12MP", "32MP", "3GB", "32GB")
-
-
-# Display details
-applephone1.show_phone_details()
-applephone2.show_phone_details()
-samsungphone1.show_phone_details()
-samsungphone2.show_phone_details()
+# creating Samsung objects
+samsung1 = Samsung("Touch Screen", "5G", True, "16MP", "48MP", "4GB", "64GB")
+samsung2 = Samsung("Touch Screen", "4G/5G", True, "12MP", "32MP", "3GB", "32GB")
 
 
-# Using functions
-applephone1.make_call("9876543210")
-samsungphone1.receive_call()
-samsungphone2.take_picture()
+# showing details
+apple1.show_details()
+apple2.show_details()
+samsung1.show_details()
+samsung2.show_details()
+
+
+# using functions
+apple1.make_call("9876543210")
+samsung1.receive_call()
+samsung2.take_picture()

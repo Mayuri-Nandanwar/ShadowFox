@@ -2,23 +2,21 @@
 #1.4 liters of water in a square meter, what is the total amount of water in the pond? Print the answer without any decimal point in it. 
 # Hint: Circle Area = π r^2 Water in the pond = Pond Area Water per Square Meter
 
-#radius of pond
-radius = 84
+# given radius of the pond
+r = 84
 
-#value of pie
-pi = 3.14
+# value of pi
+pi_value = 3.14
 
-#calculate area of pond
-pond_area = pi * (radius ** 2)
+# calculating the area of the pond
+area = pi_value * (r ** 2)
 
-# Water per square meter 
-water_per_square_meter = 1.4
+# water available per square meter
+water_per_m2 = 1.4
 
-# Total water in the pond 
-total_water = pond_area * water_per_square_meter
+# calculating total water in the pond
+total_water = area * water_per_m2
 
-# Print results
-print("Area of the pond:", pond_area, "square meters")
-
-# Print water amount without any decimal point
-print("Total water in the pond:", int(total_water), "liters")
+# displaying the results
+print("Area of pond:", area, "square meters")
+print("Total water in pond:", int(total_water), "liters")

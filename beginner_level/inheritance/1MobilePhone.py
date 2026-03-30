@@ -1,39 +1,42 @@
 #Create inheritance using MobilePhone as base class and Apple & Samsung as child class 1. The base class should have properties: 1. ScreenType = Touch Screen
 #2. NetworkType = 4G/5G, 3. DualSim = True or False, 4. FrontCamera = (5MP/8MP/12MP/16MP), 5. rearCamera = (8MP/12MP/16MP/32MP/48MP), 6. RAM = (2GB/3GB/4GB), 7. Storage = (16GB/32GB/64GB)
 
-#Base Class
+# Base class
 class MobilePhone:
-    def __init__(self, ScreenType, NetworkType, DualSim, FrontCamera, RearCamera, RAM, Storage):
-        self.ScreenType = ScreenType
-        self.NetworkType = NetworkType
-        self.DualSim = DualSim
-        self.FrontCamera = FrontCamera
-        self.RearCamera = RearCamera
-        self.RAM = RAM
-        self.Storage = Storage
-        
-    def Show_Details(self):
-        print("Screen Type :", self.ScreenType)
-        print("Network Type :", self.NetworkType)
-        print("Dual Sim :", self.DualSim)
-        print("Front Camera :", self.FrontCamera)
-        print("Rear Camera :", self.RearCamera)
-        print("RAM :", self.RAM)
-        print("Storage :", self.Storage)
-        
-#Child class Apple
+    def __init__(self, screen_type, network_type, dual_sim, front_camera, rear_camera, ram, storage):
+        self.screen_type = screen_type
+        self.network_type = network_type
+        self.dual_sim = dual_sim
+        self.front_camera = front_camera
+        self.rear_camera = rear_camera
+        self.ram = ram
+        self.storage = storage
+
+    def show_details(self):
+        print("Screen Type:", self.screen_type)
+        print("Network Type:", self.network_type)
+        print("Dual SIM:", self.dual_sim)
+        print("Front Camera:", self.front_camera)
+        print("Rear Camera:", self.rear_camera)
+        print("RAM:", self.ram)
+        print("Storage:", self.storage)
+
+
+# Apple class
 class Apple(MobilePhone):
     def __init__(self):
         super().__init__(
-           "Touch Screen",
+            "Touch Screen",
             "4G/5G",
-            "False",
+            False,
             "12MP",
             "48MP",
             "4GB",
             "64GB"
         )
-# Child class Samsung
+
+
+# Samsung class
 class Samsung(MobilePhone):
     def __init__(self):
         super().__init__(
@@ -46,16 +49,14 @@ class Samsung(MobilePhone):
             "64GB"
         )
 
-#create objects
-iphone = Apple()
-Galaxy = Samsung()
 
-#print results
-print("Apple phone Details :")
-iphone.Show_Details()
+# creating objects
+apple_phone = Apple()
+samsung_phone = Samsung()
 
-print("\nSamsung phone details :")
-Galaxy.Show_Details()
+# displaying details
+print("Apple Phone Details:")
+apple_phone.show_details()
 
-        
-        
+print("\nSamsung Phone Details:")
+samsung_phone.show_details()

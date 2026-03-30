@@ -3,33 +3,34 @@
 
 import random
 
-#number of times the die is rolled
-total_throws = 20
+# total number of throws
+throws = 20
 
-#Counters
-count_six = 0
-count_one = 0
-double_six_count = 0
-previous_roll = None
+# counters
+six_count = 0
+one_count = 0
+consecutive_six = 0
 
-# Simulate die rolls
-for attempt in range(total_throws):
-    roll = random.randint(1, 6)
-    print("Roll", attempt+1, ":", roll)
-    
-    if roll == 6:
-        count_six += 1
-    if roll == 1:
-        count_one += 1
-    if roll == 6 and previous_roll == 6:
-        previous_roll += 1
-    previous_roll = roll
-    
- #print statistics   
-print("\n Statistics:")
-print("Times 6 appeared :", count_six)
-print("Times 1 appeared :", count_one)
-print("Times two 6s came in a row :", double_six_count)
+last_roll = None
 
+# rolling the die
+for i in range(throws):
+    value = random.randint(1, 6)
+    print("Roll", i + 1, ":", value)
 
+    if value == 6:
+        six_count += 1
+    if value == 1:
+        one_count += 1
 
+    # check for two 6s in a row
+    if value == 6 and last_roll == 6:
+        consecutive_six += 1
+
+    last_roll = value
+
+# printing results
+print("\nStatistics:")
+print("Number of times 6 appeared:", six_count)
+print("Number of times 1 appeared:", one_count)
+print("Number of times two 6s in a row:", consecutive_six)
